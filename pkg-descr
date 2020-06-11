@@ -1,0 +1,16 @@
+The plugin watches packages for INSTALL, DEINSTALL and UPGRADE events and
+executes a set of scripts after 'pkg install', 'pkg upgrade', 'pkg remove' or
+'pkg autoremove' have been run.
+
+Create /usr/local/etc/pkg/watchpkg.conf based on watchpkg.conf.sample and edit
+it to your liking.
+
+In /usr/local/etc/pkg.conf, make sure PKG_ENABLE_PLUGINS is set to true and
+add "watchpkg" to PLUGINS.
+
+Check your setup via 'pkg plugins':
+
+  $ pkg plugins
+  NAME       DESC                                          VERSION
+  watchpkg   Watch for package changes                     1.0.0
+
