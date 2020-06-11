@@ -1,0 +1,25 @@
+# Configuration file for pkg plugin: watchpkg
+#
+# The file is in UCL format.  For more information on the syntax of UCL,
+# please visit the official UCL website: http://github.com/vstakhov/libucl
+#
+# Also see pkg.conf(5) for general details on using plugins for pkg(8).
+#
+
+# List of scripts to be called by the plugin
+# The scripts will be called in the given order, once for each PKGS:
+#
+#   /path/to/script <pkg-name> <pkg-origin>
+#
+# The use of full qualified paths is recommended. If the list is empty,
+# a warning will be issued and no action will be performed.
+SCRIPTS [
+]
+
+# List of packages to watch for changes
+# Both package name (e.g. "pkg") and origin (e.g. "ports-mgmt/pkg") notations
+# are permitted. If the list is empty, *every* package change will trigger a
+# notification.
+#PKGS = [
+#	"pkg",
+#]
