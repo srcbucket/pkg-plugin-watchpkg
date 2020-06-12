@@ -1,7 +1,7 @@
-.include <bsd.own.mk>
-
 PREFIX?=	/usr/local
 LIBDIR=		${PREFIX}/lib/pkg/
+CONFDIR=	${PREFIX}/etc/pkg/
+CONFNAME=	${PLUGIN_NAME}.conf.sample
 SHLIB_DIR?=	${LIBDIR}/
 SHLIB_NAME?=	${PLUGIN_NAME}.so
 NO_OBJ=		yes
@@ -14,5 +14,7 @@ CFLAGS+=	${PKGFLAGS}
 
 beforeinstall:
 	${INSTALL} -d ${LIBDIR}
+	${INSTALL} -d ${CONFDIR}
+	${INSTALL} ${.CURDIR}/${CONFNAME} ${CONFDIR}/${CONFNAME}
 
 .include <bsd.lib.mk>
