@@ -50,7 +50,7 @@ extern char **environ;
 /* Define plugin name and configuration settings */
 static const char PLUGIN_NAME[] = "watchpkg";
 static const char PLUGIN_DESCRIPTION[] = "Watch for package changes";
-static const char PLUGIN_VERSION[] = "1.0.0";
+static const char PLUGIN_VERSION[] = "1.0.1";
 
 static const char CFG_SCRIPTS[] = "SCRIPTS";
 static const char CFG_PKGS[] = "PKGS";
@@ -129,6 +129,18 @@ pkg_plugin_init(struct pkg_plugin *p)
 	pkg_iter it = NULL;
 
 	cfg = pkg_plugin_conf(self);
+
+	/*
+	 * pkg(8) provides no access to configuration options.
+	 *
+	 * To avoid confusing output on periodic(8) output, we remain silent but
+	 * return with error.
+	 *
+	 * May be removed once a fixed version of pkg(8) is available.
+	 */
+	if (pkg_object_type(cfg) != PKG_OBJECT) {
+		return (EPKG_FATAL);
+	}
 
 	/* Read list of SCRIPTS to be called for changes in the given PKGS */
 	cfg_scripts = read_list_from_config(cfg, CFG_SCRIPTS);

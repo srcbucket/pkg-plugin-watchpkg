@@ -20,6 +20,6 @@ SCRIPTS [
 # Both package name (e.g. "pkg") and origin (e.g. "ports-mgmt/pkg") notations
 # are permitted. If the list is empty, *every* package change will trigger a
 # notification.
-#PKGS = [
+#PKGS [
 #	"pkg",
 #]
