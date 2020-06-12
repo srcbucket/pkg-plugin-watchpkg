@@ -50,7 +50,7 @@ extern char **environ;
 /* Define plugin name and configuration settings */
 static const char PLUGIN_NAME[] = "watchpkg";
 static const char PLUGIN_DESCRIPTION[] = "Watch for package changes";
-static const char PLUGIN_VERSION[] = "1.0.0";
+static const char PLUGIN_VERSION[] = "1.0.1";
 
 static const char CFG_SCRIPTS[] = "SCRIPTS";
 static const char CFG_PKGS[] = "PKGS";
