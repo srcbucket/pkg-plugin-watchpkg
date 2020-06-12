@@ -130,6 +130,18 @@ pkg_plugin_init(struct pkg_plugin *p)
 
 	cfg = pkg_plugin_conf(self);
 
+	/*
+	 * pkg(8) provides no access to configuration options.
+	 *
+	 * To avoid confusing output on periodic(8) output, we remain silent but
+	 * return with error.
+	 *
+	 * May be removed once a fixed version of pkg(8) is available.
+	 */
+	if (pkg_object_type(cfg) != PKG_OBJECT) {
+		return (EPKG_FATAL);
+	}
+
 	/* Read list of SCRIPTS to be called for changes in the given PKGS */
 	cfg_scripts = read_list_from_config(cfg, CFG_SCRIPTS);
 	/* Read list of PKGS to watch for changes */
