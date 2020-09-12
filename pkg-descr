@@ -13,4 +13,3 @@ Check your setup via 'pkg plugins':
   $ pkg plugins
   NAME       DESC                                          VERSION
   watchpkg   Watch for package changes                     1.0.0
-
