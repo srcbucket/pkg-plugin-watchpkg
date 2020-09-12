@@ -13,7 +13,7 @@ BUILD_DEPENDS=	pkg>0:ports-mgmt/pkg \
 		pkgconf>0:devel/pkgconf
 RUN_DEPENDS=	pkg>0:ports-mgmt/pkg
 
-PLIST_FILES=	lib/pkg/watchpkg.so etc/pkg/watchpkg.conf.sample
+PLIST_FILES=	lib/pkg/watchpkg.so "@sample etc/pkg/watchpkg.conf.sample"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	srcbucket

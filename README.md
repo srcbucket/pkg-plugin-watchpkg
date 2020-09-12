@@ -29,7 +29,7 @@ At least run:
 
 Also perform static analysis of the port:
 
-	$ portlint
+	$ portlint -abct
 
 ## Submit the changes
 
